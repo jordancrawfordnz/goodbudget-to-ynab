@@ -1,0 +1,16 @@
+{
+  "name": "goodbudget-to-ynab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "import.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "batch-stream": "^0.1.3",
+    "fast-csv": "^2.4.1",
+    "ynab": "^1.2.0"
+  }
+}

@@ -14,7 +14,7 @@ if (args.length < 4 || args.length > 6) {
 
 runImport(...args)
 
-async function runImport(inputFileName, ynabAccessToken, ynabBudgetId, ynabAccountId, dateFormat = "MM/DD/YYYY", rerunIndex = 0) {
+async function runImport(inputFileName, ynabAccessToken, ynabBudgetId, ynabAccountId, dateFormat = "MM/DD/YYYY", rerunIndex = "0") {
     let stream = fs.createReadStream(inputFileName);
     let ynabAPI = new ynab.API(ynabAccessToken);
 

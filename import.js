@@ -32,7 +32,7 @@ async function runImport(inputFileName, ynabAccessToken, ynabBudgetId, ynabAccou
                 let envelopeName = row.Envelope.split(': ').pop();
     
                 let categoryId = categoryIds[envelopeName];
-                let date = moment(row.Date, dateFormat).toISOString();
+                let date = moment(row.Date, dateFormat).format("YYYY-MM-DD");
                 let truncatedPayeeName = row.Name.length == 0 ? null : row.Name.substring(0, 50);
                 let amount = Math.round(parseFloat(row.Amount) * 1000);
 

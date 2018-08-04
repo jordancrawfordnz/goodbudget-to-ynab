@@ -67,7 +67,7 @@ It's frustrating to run an import to find that you missed out on a category, esp
 Theres a seperate tool you can run to check if you've got all the missing categories.
 
 Run this with:
-`node find_missing_categories.js [GoodBudget input file] [YNAB Access Token] [YNAB budget ID]`
+`node bin/find_missing_categories.js [GoodBudget input file] [YNAB Access Token] [YNAB budget ID]`
 
 * **GoodBudget input file:** This is the path to the CSV file you downloaded from GoodBudget above.
 
@@ -78,7 +78,7 @@ Run this with:
 ### Running the importer
 Run the importer with the following command:
 
-`node import.js [GoodBudget input file] [YNAB Access Token] [YNAB budget ID] [YNAB account ID] [optional - date format] [optional - rerun index]`
+`node bin/import.js [GoodBudget input file] [YNAB Access Token] [YNAB budget ID] [YNAB account ID] [optional - date format] [optional - rerun index]`
 
 * **GoodBudget input file:** This is the path to the CSV file you downloaded from GoodBudget above.
 

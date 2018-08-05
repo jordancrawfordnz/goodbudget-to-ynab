@@ -21,16 +21,15 @@ Fortunately, YNAB has an API which lets users upload transactions. This project 
 
 ## What does it do?
 * Matches the envelope name to a YNAB category name.
-* Combines the "Notes" and "Details" fields in the GoodBudget export to the memo field in YNAB.
-* Uploads transactions to YNAB in batches of 200. The YNAB API limit is 200 req/hour so do files with 40k+ transactions in smaller batches.
+* Uploads transactions to YNAB in batches of 200.
 * Marks all transactions as 'cleared' but won't automatically approve them - this way you'll still get a chance to review the transactions in YNAB.
 * Uses the `import_id` field when uploading in order to prevent duplicate transactions being uploaded. YNAB uses this to decide if the transaction already exists. The importer attempts to uniquely identify transactions within the file such that re-importing the same file (or part of the file, as long as it's split by day) won't result in the transaction being imported again.
+* If your new budget category cannot be found, the original budget category will be filled into the memo field.
+* Handles split transactions from GoodBudget. There is currently no support in the YNAB API so this results in seperate transactions for each split (rather than sub-transactions).
+* `[Unallocated]` transactions are treated as income and sent to the "To be Budgeted" category in YNAB.
 
 ## What can't it do?
-* GoodBudget lists transactions for deleted envelopes without an envelope and with a mention of the envelope in the "Details" column. These will import without a category so you'll need to fix it youself from the memo field.
-* The YNAB API doesn't currently support split transactions, so you'll need to sort these out yourself. Similar to deleted envelopes, these mention the splits in the "Details" column which will come through in the memo.
-* The YNAB API doesn't currently support transfer transactions, so you'll also need to manually assign the payee to the transaction to make it a transfer. Unfortunately, when these are created within GoodBudget these come through on the export as "Account Transfer" without any details about which account, so you'll need to figure out which account they belong to again.
-* Where an envelope can't be found in YNAB (e.g.: deleted or renamed envelopes), the original GoodBudget envelope name will be included in the memo.
+* The YNAB API doesn't currently support transfer transactions, so you'll also need to manually assign the payee to the transaction to make it a transfer. Once you've got all your accounts in YNAB the "All Accounts" view makes it easy to figure out which account these are meant to link to and YNAB will automatically match the other side of the transfer.
 
 ## How do I use it?
 ### Setting up on your computer

@@ -1,5 +1,11 @@
 # GoodBudget to YNAB Importer
 
+---
+
+**Please note:** This project is not actively maintained, it may no longer work and may depend on out of date dependencies.
+
+---
+
 ## What is this?
 [YNAB (You Need a Budget)](https://www.youneedabudget.com/) and [GoodBudget](https://goodbudget.com/) are personal finance apps.
 
